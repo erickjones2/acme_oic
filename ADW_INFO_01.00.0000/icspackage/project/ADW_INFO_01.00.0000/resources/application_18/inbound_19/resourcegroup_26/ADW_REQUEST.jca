@@ -1,0 +1,25 @@
+<adapter-config name="ADW_REQUEST" adapter="adwdatabase" wsdlLocation="ADW_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="eis/DB/XPPKQB1HKID2JGIY_DEV">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.tip.adapter.db.DBManagedConnectionFactory">
+      <property name="ConnectionString" value="2B731F769540C4FE1208361ADF9496D40EA793A78FF9C66917C6FD194B701F2C7B3466EAF9A2F9D4D5360A3CC554B9A69D051A6B0F46DB19BE9F004C7D132420A22673AC7CC6746DC9B30791A2DFD38B7CCEE4FFE7CFE72854E493BA7F95A128056C0FD9AD6776EA78334AC6948CD6F263996D82BF83C465B9383AA6E1224FE112A60A028D5C043F25A77CB7E91E45FB431338A4C394D0283D6A96059297ACB53A3B390F0404CC756E5B0F857AA938CB096FB8FC125ADB4F46E372352ED0494D10D78F761385AC18B2CB5DF86336637D699138A852E28A9E9BC01741C07A36F1A3F26D93D1DA0F0936EE5A3A965F05AD4884FDB3C2E6C02D9445F0C63CD854EF58939FC2BEC04DCAF420849C48825985"/>
+      <property name="DriverClassName" value="oracle.jdbc.OracleDriver"/>
+      <property name="csfkey" value="22305a1953392703ecb77c8abcf4ee8fced6e91cf6e9f662718d686bd3f2d9b2"/>
+      <property name="csfMap" value="oracle.cloud.adapter"/>
+      <property name="PlatformClassName" value="org.eclipse.persistence.platform.database.Oracle10Platform"/>
+      <property name="MinConnections" value="2"/>
+      <property name="MaxConnections" value="35"/>
+      <property name="MinReadConnections" value="1"/>
+      <property name="MaxReadConnections" value="15"/>
+      <property name="IsSSLEnabled" value="true"/>
+      <property name="RuntimeJKSUnzipLoc" value="XPPKQB1HKID2JGIY_DEV"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="ADW_REQUEST_ptt" operation="ADW_REQUEST">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select SERVICE_NAME from gv$session where sid in ( select sid from V$MYSTAT)"/>
+      <property name="OperationName" value=""/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+      <property name="MessageExchangePattern" value="REQUEST_RESPONSE"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

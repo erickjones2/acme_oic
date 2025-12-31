@@ -1,0 +1,1 @@
+{"id":"TEST_SCHEDULE_RG_01.00.0000","icsProject":{"version":"01.00.0000","percentageComplete":100,"modelType":"FREEFORM","projectCode":"TEST_SCHEDULE_RG","processorCount":{"MESSAGE_TRACKER":1,"SCHEDULE_RECEIVE":1,"INTEGRATION_METADATA":1,"ACTIVITY_STREAM_LOGGER":1,"CATCH_ALL":1},"smartTags":"style:App Driven Orchestration"}}

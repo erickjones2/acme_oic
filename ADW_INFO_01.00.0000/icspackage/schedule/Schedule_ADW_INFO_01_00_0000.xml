@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schedule name="Schedule_ADW_INFO_01_00_0000" xsi:schemaLocation="http://xmlns.oracle.com/scheduler" xmlns="http://xmlns.oracle.com/scheduler" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <display-name>Schedule ADW_INFO_01_00_0000</display-name>
+    <recurrence>
+        <frequency>MINUTELY</frequency>
+        <interval>10</interval>
+        <start>2025-05-20 18:51:10.506 America/Chicago</start>
+        <end>2025-05-30 18:46:00.000 America/Chicago</end>
+        <count>0</count>
+        <months-of-year></months-of-year>
+        <weeks-of-month></weeks-of-month>
+        <days-of-month></days-of-month>
+        <days-of-week></days-of-week>
+    </recurrence>
+    <time-zone>America/Chicago</time-zone>
+</schedule>

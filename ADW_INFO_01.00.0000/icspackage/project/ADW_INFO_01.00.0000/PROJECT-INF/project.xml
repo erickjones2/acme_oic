@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:icsproject name="project_1" version="10.1" cversion="104" modelType="freeform" xmlns="http://www.oracle.com/2014/03/ics/project/definition" xmlns:ns2="http://www.oracle.com/2014/03/ics/flow/definition" xmlns:ns3="http://www.oracle.com/2014/03/ics/project">
+    <projectCode>ADW_INFO</projectCode>
+    <projectVersion>01.00.0000</projectVersion>
+    <projectName>ADW_INFO</projectName>
+    <percentComplete>100</percentComplete>
+    <projectHasErrors>false</projectHasErrors>
+    <projectHasWarnings>true</projectHasWarnings>
+    <ns3:icsflow name="flow_1">
+        <ns2:application name="application_18">
+            <ns2:role>target</ns2:role>
+            <ns2:adapter>
+                <ns2:type>app-adapter</ns2:type>
+                <ns2:code>XPPKQB1HKID2JGIY_DEV</ns2:code>
+                <ns2:name>ADW</ns2:name>
+                <ns2:property name="hasAttachment" value="false"/>
+            </ns2:adapter>
+            <ns2:mep>push-sync</ns2:mep>
+            <ns2:inbound name="inbound_19">
+                <ns2:operation>ADW_REQUEST</ns2:operation>
+                <ns2:resourceGroup name="resourcegroup_26">
+                    <ns2:resource name="resource_27" location="../resources/application_18/inbound_19/resourcegroup_26/ADW_REQUEST.jca" type="jca"/>
+                    <ns2:resource name="resource_28" location="../resources/application_18/inbound_19/resourcegroup_26/ICSFault.xsd" type="xsd"/>
+                    <ns2:resource name="resource_29" location="../resources/application_18/inbound_19/resourcegroup_26/ADW_REQUEST.wsdl" type="wsdl"/>
+                </ns2:resourceGroup>
+                <ns2:input name="input_25">
+                    <ns2:role>request</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_30"/>
+                </ns2:input>
+                <ns2:output name="output_32">
+                    <ns2:role>response</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_31"/>
+                </ns2:output>
+                <ns2:output name="output_34">
+                    <ns2:role>fault</ns2:role>
+                    <ns2:subRole>serviceInvocationError</ns2:subRole>
+                    <ns2:messageContextRef refUri="messagecontext_33"/>
+                </ns2:output>
+            </ns2:inbound>
+        </ns2:application>
+        <ns2:processor name="processor_1">
+            <ns2:type>messageTracker</ns2:type>
+            <ns2:role>messageTracker:global</ns2:role>
+            <ns2:trackingVariableGroup>
+                <ns2:trackingVariable>
+                    <ns2:role>tracking_var_1</ns2:role>
+                    <ns2:primary>true</ns2:primary>
+                    <ns2:name>startTime</ns2:name>
+                    <ns2:xpath>/schedule/startTime</ns2:xpath>
+                    <ns2:messageContextRef refUri="messagecontext_11"/>
+                    <ns2:output name="output_3">
+                        <ns2:messageContextRef refUri="messagecontext_2"/>
+                    </ns2:output>
+                </ns2:trackingVariable>
+                <ns2:trackingVariable>
+                    <ns2:role>tracking_var_2</ns2:role>
+                    <ns2:primary>false</ns2:primary>
+                    <ns2:name>tracking_var_2</ns2:name>
+                    <ns2:messageContextRef refUri="messagecontext_11"/>
+                    <ns2:output name="output_5">
+                        <ns2:messageContextRef refUri="messagecontext_4"/>
+                    </ns2:output>
+                </ns2:trackingVariable>
+                <ns2:trackingVariable>
+                    <ns2:role>tracking_var_3</ns2:role>
+                    <ns2:primary>false</ns2:primary>
+                    <ns2:name>tracking_var_3</ns2:name>
+                    <ns2:messageContextRef refUri="messagecontext_11"/>
+                    <ns2:output name="output_7">
+                        <ns2:messageContextRef refUri="messagecontext_6"/>
+                    </ns2:output>
+                </ns2:trackingVariable>
+            </ns2:trackingVariableGroup>
+        </ns2:processor>
+        <ns2:processor name="processor_8">
+            <ns2:type>scheduleReceive</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_9">
+                <ns2:resource name="resource_10" location="../resources/processor_8/resourcegroup_9/ICSSchedule_1.xsd" type="xsd"/>
+            </ns2:resourceGroup>
+            <ns2:output name="output_12">
+                <ns2:messageContextRef refUri="messagecontext_11"/>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_13">
+            <ns2:type>integrationMetadata</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_14">
+                <ns2:resource name="resource_15" location="../resources/processor_13/resourcegroup_14/ICSIntegrationMetadata.xsd" type="xsd"/>
+            </ns2:resourceGroup>
+            <ns2:output name="output_17">
+                <ns2:messageContextRef refUri="messagecontext_16"/>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_35">
+            <ns2:type>wait</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_40">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_41" location="../resources/processor_35/resourcegroup_40/expr.properties" type="properties"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_11">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:processorName>Wait1</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_42">
+            <ns2:type>integrationProperties</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_43">
+                <ns2:resource name="resource_44" location="../resources/processor_42/resourcegroup_43/ICSIntegrationProperties.xsd" type="xsd"/>
+            </ns2:resourceGroup>
+            <ns2:resourceGroup name="resourcegroup_56">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_57" location="../resources/processor_42/resourcegroup_56/integration_property_2expr.properties" type="properties">
+                    <ns2:role>integration_property_2</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_58" location="../resources/processor_42/resourcegroup_56/integration_property_1expr.properties" type="properties">
+                    <ns2:role>integration_property_1</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:output name="output_46">
+                <ns2:messageContextRef refUri="messagecontext_45"/>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_50">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>simpleType</ns2:role>
+            <ns2:output name="output_52">
+                <ns2:messageContextRef refUri="messagecontext_51"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="global_variable_1"/>
+        </ns2:processor>
+        <ns2:processor name="processor_53">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>simpleType</ns2:role>
+            <ns2:output name="output_55">
+                <ns2:messageContextRef refUri="messagecontext_54"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="global_variable_2"/>
+        </ns2:processor>
+        <ns2:messageContext name="messagecontext_2">
+            <ns2:rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_4">
+            <ns2:rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_6">
+            <ns2:rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_11">
+            <ns2:resourceRef refUri="processor_8/resourcegroup_9/resource_10"/>
+            <ns2:rootElement elementName="schedule" namespace="http://www.oracle.com/2014/03/ics/schedule"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_16">
+            <ns2:resourceRef refUri="processor_13/resourcegroup_14/resource_15"/>
+            <ns2:rootElement elementName="metadata" namespace="http://www.oracle.com/2014/03/ic/integration/metadata"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_30">
+            <ns2:resourceRef refUri="application_18/inbound_19/resourcegroup_26/resource_29"/>
+            <ns2:rootElement elementName="ADWInput" namespace="http://xmlns.oracle.com/cloud/adapter/adwdatabase/ADW_REQUEST/types"/>
+            <ns2:wsdlMessage messageName="args_in_msg" namespace="http://xmlns.oracle.com/cloud/adapter/adwdatabase/ADW_REQUEST" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_31">
+            <ns2:resourceRef refUri="application_18/inbound_19/resourcegroup_26/resource_29"/>
+            <ns2:rootElement elementName="ADWOutputCollection" namespace="http://xmlns.oracle.com/cloud/adapter/adwdatabase/ADW_REQUEST/types"/>
+            <ns2:wsdlMessage messageName="args_out_msg" namespace="http://xmlns.oracle.com/cloud/adapter/adwdatabase/ADW_REQUEST" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_33">
+            <ns2:resourceRef refUri="application_18/inbound_19/resourcegroup_26/resource_29"/>
+            <ns2:rootElement elementName="serviceInvocationError" namespace="http://xmlns.oracle.com/cloud/generic/service/fault"/>
+            <ns2:wsdlMessage messageName="fault_msg" namespace="http://xmlns.oracle.com/cloud/adapter/adwdatabase/ADW_REQUEST" partName="parameters"/>
+            <ns2:wsdlFault faultName="serviceInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/adwdatabase/ADW_REQUEST"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_45">
+            <ns2:resourceRef refUri="processor_42/resourcegroup_43/resource_44"/>
+            <ns2:rootElement elementName="properties" namespace="http://www.oracle.com/2014/03/ic/integration/properties"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_51">
+            <ns2:rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_54">
+            <ns2:rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:commonNamespaceMaps/>
+        <ns2:orchestration>
+            <ns2:integrationMetadata id="im0" refUri="processor_13"/>
+            <ns2:integrationProperties id="ip0" refUri="processor_42"/>
+            <ns2:globalVariable id="gtv0" refUri="processor_50"/>
+            <ns2:globalVariable id="gtv1" refUri="processor_53"/>
+            <ns2:scheduleReceive trackingRefUri="processor_1" id="sr0" refUri="processor_8"/>
+            <ns2:wait id="w0" refUri="processor_35"/>
+            <ns2:invoke id="i0" refUri="application_18" name="Oracle ADW1"/>
+            <ns2:stop id="st0"/>
+        </ns2:orchestration>
+    </ns3:icsflow>
+</ns3:icsproject>

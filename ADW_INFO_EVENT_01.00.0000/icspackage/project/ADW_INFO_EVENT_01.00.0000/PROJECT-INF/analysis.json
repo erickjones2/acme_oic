@@ -1,0 +1,1 @@
+{"id":"ADW_INFO_EVENT_01.00.0000","icsProject":{"version":"01.00.0000","percentageComplete":100,"modelType":"FREEFORM","projectCode":"ADW_INFO_EVENT","processorCount":{"MESSAGE_TRACKER":1,"INTEGRATION_METADATA":1,"TRANSFORMER":1,"SOURCE":1,"TARGET":1},"smartTags":"app:appevent, app:adwdatabase,style:Subscribed Orchestration"}}
