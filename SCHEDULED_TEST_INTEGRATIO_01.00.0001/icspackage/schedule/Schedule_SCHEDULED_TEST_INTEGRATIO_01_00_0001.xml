@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schedule name="Schedule_SCHEDULED_TEST_INTEGRATIO_01_00_0001" xsi:schemaLocation="http://xmlns.oracle.com/scheduler" xmlns="http://xmlns.oracle.com/scheduler" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <display-name>Schedule SCHEDULED_TEST_INTEGRATIO_01_00_0001</display-name>
+    <recurrence>
+        <interval>1</interval>
+        <start>2024-10-24 23:31:10.000 Asia/Calcutta</start>
+        <end>2025-10-28 18:22:00.000 Asia/Calcutta</end>
+        <count>0</count>
+        <months-of-year></months-of-year>
+        <weeks-of-month></weeks-of-month>
+        <days-of-month></days-of-month>
+        <days-of-week></days-of-week>
+        <ical-expression>FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH;BYHOUR=8,9,10,11,12,13,14,15,16,17,18,19;BYMINUTE=0,30;</ical-expression>
+    </recurrence>
+    <time-zone>Asia/Calcutta</time-zone>
+</schedule>
