@@ -1,0 +1,34 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/REST/Default_REQUEST/types" name="Default_REQUESTPortType" adapter="REST" wsdlLocation="Default_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.rest.RestAdapterConnectionFactory">
+      <property name="cloud.adapter.plugin.version" value="24.10"/>
+      <property name="cloud.adapter.sdk.version" value="23.3.5"/>
+      <property name="connectionUrl" value="%%IP_STACK_API_250317_connectionUrl"/>
+      <property name="csfMap" value="oracle.cloud.adapter"/>
+      <property name="csfkey" value="60e240daa99785dc23c99ca5b190e4bdd2d8d9a3cda8082ab4968ccadaabc334"/>
+      <property name="privateEndpoint" value="false"/>
+      <property name="securityPolicy" value="CUSTOM_SINGLE_TOKEN"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-activation portType="Default_REQUESTPortType" operation="execute">
+    <activation-spec className="oracle.tip.adapter.cloud.CloudActivationSpec">
+      <property name="targetOperation" value="execute"/>
+      <property name="HTTPHeadersAdded" value="true"/>
+      <property name="HttpVerb" value="GET"/>
+      <property name="ResourceURI" value="/check"/>
+      <property name="activationSpecClass" value="oracle.tip.adapter.cloud.CloudActivationSpec"/>
+      <property name="allowChangeDefaultNamespace" value="false"/>
+      <property name="copyFaultFromModel" value="true"/>
+      <property name="forceWsdlTypesBuild" value="true"/>
+      <property name="generateConnectivityPropertiesInboundRequest" value="RESTINREQ"/>
+      <property name="generateConnectivityPropertiesInboundResponse" value="RESTINRES"/>
+      <property name="generateInboundCredentials" value="true"/>
+      <property name="generatePartnerLink" value="false"/>
+      <property name="integrationSchemaNamespace" value="http://xmlns.oracle.com/cloud/adapter/REST/Default_REQUEST/types"/>
+      <property name="integrationWSDLNamespace" value="http://xmlns.oracle.com/cloud/adapter/REST/Default_REQUEST"/>
+      <property name="invocationStyle" value="REQUEST_RESPONSE"/>
+      <property name="operations" value="default"/>
+      <property name="postQueryParamsAsContent" value="false"/>
+    </activation-spec>
+  </endpoint-activation>
+</adapter-config>

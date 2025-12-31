@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schedule xmlns="http://xmlns.oracle.com/scheduler" name="Schedule_PARENT_IP_DETAIL_CHECK_174222_01_00_0002" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.oracle.com/scheduler">
+    <display-name>Schedule PARENT_IP_DETAIL_CHECK_174222_01_00_0002</display-name>
+    <recurrence>
+        <frequency>MINUTELY</frequency>
+        <interval>60</interval>
+        <start>2025-03-13 12:34:22.595 America/Chicago</start>
+        <count>0</count>
+        <months-of-year/>
+        <weeks-of-month/>
+        <days-of-month/>
+        <days-of-week/>
+    </recurrence>
+    <time-zone>America/Chicago</time-zone>
+</schedule>

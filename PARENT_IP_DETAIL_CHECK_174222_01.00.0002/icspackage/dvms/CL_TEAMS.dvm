@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dvm name="CL_TEAMS" xmlns="http://xmlns.oracle.com/dvm">
+    <columns>
+        <column name="City"/>
+        <column name="Name"/>
+    </columns>
+    <rows>
+        <row>
+            <cell>Barcelona</cell>
+            <cell>FCB</cell>
+        </row>
+        <row>
+            <cell>London</cell>
+            <cell>Arsenal</cell>
+        </row>
+        <row>
+            <cell>Madrid</cell>
+            <cell>Arsenal</cell>
+        </row>
+        <row>
+            <cell>Paris</cell>
+            <cell>PSG</cell>
+        </row>
+        <row>
+            <cell>Manchester</cell>
+            <cell>MCU</cell>
+        </row>
+    </rows>
+    <keywords>     teams</keywords>
+    <keywords>      cl</keywords>
+    <keywords> lookup</keywords>
+</dvm>
